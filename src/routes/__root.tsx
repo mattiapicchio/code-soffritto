@@ -1,6 +1,5 @@
-import "@/assets/css/global.css";
-
 /// <reference types="vite/client" />
+import "@/assets/css/global.css";
 import { DefaultCatchBoundary } from '@/components/layout/DefaultCatchBoundary';
 import { NotFound } from '@/components/layout/NotFound';
 import {
@@ -9,6 +8,7 @@ import {
 	Outlet,
 	Scripts,
 } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import type { ReactNode } from 'react';
 
 export const Route = createRootRoute({
@@ -53,8 +53,8 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
 			</head>
 			<body className='font-poppins bg-white text-black dark:bg-nightshade dark:text-sunflare'>
 				{children}
-				{/* <TanStackRouterDevtools position="bottom-right" />
-        <ReactQueryDevtools buttonPosition="bottom-left" /> */}
+				<TanStackRouterDevtools position="bottom-right" />
+        {/* <ReactQueryDevtools buttonPosition="bottom-left" /> */}
 				<Scripts />
 			</body>
 		</html>
