@@ -1,5 +1,6 @@
-import { ROUTE_KEY } from '@/utils/routerUtils';
 import { createFileRoute } from '@tanstack/react-router';
+import { ROUTE_KEY } from '@/utils/routerUtils';
+
 export const Route = createFileRoute(ROUTE_KEY.HOME)({
 	component: Home,
 });
