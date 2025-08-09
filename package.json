@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "preview": "vite preview",
     "biome": "npx @biomejs/biome check --write",
     "biome:format": "npx @biomejs/biome format --write",
     "biome:lint": "npx @biomejs/biome lint --write",
