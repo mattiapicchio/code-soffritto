@@ -56,7 +56,9 @@ npm run preview
 ## Linting-Formatting
 
 This project uses [Biome](https://biomejs.dev/) for linting and formatting.
+
 [Getting Started](https://biomejs.dev/guides/getting-started/)
+
 [Formatter](hhttps://biomejs.dev/formatter/)
 
 ### Common Biome Commands
