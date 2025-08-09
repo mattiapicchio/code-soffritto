@@ -1,12 +1,12 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 export const Route = createFileRoute('/')({
-  component: Home,
-})
+	component: Home,
+});
 
 function Home() {
-  return (
-    <div>
-      <h3>HOME</h3>
-    </div>
-  )
+	return (
+		<div>
+			<h3>HOME</h3>
+		</div>
+	);
 }
