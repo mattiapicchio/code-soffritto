@@ -7,10 +7,8 @@
 		"defaultBranch": "main"
 	},
 	"files": {
-		"ignoreUnknown": false,
-		"includes": [
-			"!src/routeTree.gen.ts"
-		]
+		"includes": ["src/**/*", "!src/routeTree.gen.ts"],
+		"ignoreUnknown": false
 	},
 	"formatter": {
 		"enabled": true,
@@ -24,7 +22,15 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"nursery": {
+				"useSortedClasses": {
+					"level": "info",
+					"options": {
+						"functions": ["clsx", "cva", "tw", "tw.*"]
+					}
+				}
+			}
 		}
 	},
 	"javascript": {
@@ -41,7 +47,7 @@
 	},
 	"json": {
 		"formatter": {
-			"enabled": false,
+			"enabled": true,
 			"trailingCommas": "none"
 		}
 	},
