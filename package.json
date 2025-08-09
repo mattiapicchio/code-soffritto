@@ -1,38 +1,42 @@
 {
-  "name": "code-soffritto",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "biome": "npx @biomejs/biome check --write",
-    "biome:format": "npx @biomejs/biome format --write",
-    "biome:lint": "npx @biomejs/biome lint --write",
-    "biome:changed": "npx @biomejs/biome check --changed",
-    "biome:staged": "biome check --staged"
-  },
-  "keywords": [],
-  "author": "MP",
-  "license": "ISC",
-  "homepage": "https://github.com/mattiapicchio/code-soffritto#readme",
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
-    "@tanstack/react-router": "^1.131.2",
-    "@tanstack/react-router-devtools": "^1.131.2",
-    "@tanstack/react-start": "^1.131.2",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.11",
-    "vite": "^7.1.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.1.4",
-    "@tanstack/router-plugin": "^1.131.2",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "^5.9.2",
-    "vite-tsconfig-paths": "^5.1.4"
-  }
+	"name": "code-soffritto",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"biome": "npx @biomejs/biome check --write",
+		"biome:unsafe": "npx @biomejs/biome check --write --unsafe",
+		"biome:format": "npx @biomejs/biome format --write",
+		"biome:lint": "npx @biomejs/biome lint --write",
+		"biome:changed": "npx @biomejs/biome check --changed",
+		"biome:staged": "biome check --staged"
+	},
+	"keywords": [],
+	"author": "MP",
+	"license": "ISC",
+	"homepage": "https://github.com/mattiapicchio/code-soffritto#readme",
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.11",
+		"@tanstack/react-query": "^5.84.2",
+		"@tanstack/react-router": "^1.131.2",
+		"@tanstack/react-router-devtools": "^1.131.2",
+		"@tanstack/react-router-ssr-query": "^1.131.2",
+		"@tanstack/react-start": "^1.131.2",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"tailwindcss": "^4.1.11",
+		"vite": "^7.1.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.4",
+		"@tanstack/react-query-devtools": "^5.84.2",
+		"@tanstack/router-plugin": "^1.131.2",
+		"@types/react": "^19.1.9",
+		"@types/react-dom": "^19.1.7",
+		"@vitejs/plugin-react": "^5.0.0",
+		"typescript": "^5.9.2",
+		"vite-tsconfig-paths": "^5.1.4"
+	}
 }
