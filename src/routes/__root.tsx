@@ -1,4 +1,8 @@
+import "@/assets/css/global.css";
+
 /// <reference types="vite/client" />
+import { DefaultCatchBoundary } from '@/components/layout/DefaultCatchBoundary';
+import { NotFound } from '@/components/layout/NotFound';
 import {
 	createRootRoute,
 	HeadContent,
@@ -6,8 +10,6 @@ import {
 	Scripts,
 } from '@tanstack/react-router';
 import type { ReactNode } from 'react';
-import { DefaultCatchBoundary } from '~/components/layout/DefaultCatchBoundary';
-import { NotFound } from '~/components/layout/NotFound';
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -45,11 +47,11 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
 	return (
-		<html lang='en'>
+		<html lang='en' data-theme="dark">
 			<head>
 				<HeadContent />
 			</head>
-			<body>
+			<body className='font-poppins bg-white text-black dark:bg-nightshade dark:text-sunflare'>
 				{children}
 				{/* <TanStackRouterDevtools position="bottom-right" />
         <ReactQueryDevtools buttonPosition="bottom-left" /> */}

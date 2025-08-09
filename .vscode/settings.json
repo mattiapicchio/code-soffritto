@@ -8,7 +8,24 @@
   "search.exclude": {
     "**/routeTree.gen.ts": true
   },
+  "editor.semanticHighlighting.enabled": true,
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.mdx": "markdown"
+  },
+  "tailwindCSS.classAttributes": [
+    "className"
+  ],
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.colorDecorators": true,
+  "tailwindCSS.showPixelEquivalents": true,
+  "tailwindCSS.suggestions": true,
   "cSpell.words": [
-    "soffritto"
+    "oklch",
+    "soffritto",
+    "sunflare",
+    "voltgreen"
   ]
 }

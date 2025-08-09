@@ -1,3 +1,4 @@
+import { ROUTE_KEY } from '@/utils/routerUtils';
 import { Link } from '@tanstack/react-router';
 
 export function NotFound({ children }: { children?: React.ReactElement }) {
@@ -15,7 +16,7 @@ export function NotFound({ children }: { children?: React.ReactElement }) {
 					Go back
 				</button>
 				<Link
-					to='/'
+					to={ROUTE_KEY.HOME}
 					className='bg-cyan-600 text-white px-2 py-1 rounded uppercase font-black text-sm'
 				>
 					Start Over

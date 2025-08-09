@@ -1,3 +1,4 @@
+import { ROUTE_KEY } from '@/utils/routerUtils';
 import type { ErrorComponentProps } from '@tanstack/react-router';
 import {
 	ErrorComponent,
@@ -31,14 +32,14 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
 				</button>
 				{isRoot ? (
 					<Link
-						to='/'
+						to={ROUTE_KEY.HOME}
 						className={`px-2 py-1 bg-gray-600 dark:bg-gray-700 rounded text-white uppercase font-extrabold`}
 					>
 						Home
 					</Link>
 				) : (
 					<Link
-						to='/'
+						to={ROUTE_KEY.HOME}
 						className={`px-2 py-1 bg-gray-600 dark:bg-gray-700 rounded text-white uppercase font-extrabold`}
 						onClick={(e) => {
 							e.preventDefault();
