@@ -18,6 +18,7 @@ Tech:
 - TypeScript
 - Tailwind CSS
 - Vite
+- [Biome](#linting-formatting)
 - [TanStack Query](https://tanstack.com/query/latest)
 - [TanStack Router](https://tanstack.com/router/latest)
 - [TanStack Start](https://tanstack.com/start/latest)
