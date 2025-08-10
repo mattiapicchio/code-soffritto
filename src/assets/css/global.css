@@ -33,7 +33,7 @@
 
   html,
   body {
-    @apply bg-white font-poppins text-black dark:bg-nightshade dark:text-sunflare antialiased;
+    @apply bg-white font-poppins text-blue dark:bg-nightshade dark:text-sunflare antialiased;
     -webkit-tap-highlight-color: transparent; /* remove Android highlights taps on links */
   }
 
