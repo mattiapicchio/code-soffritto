@@ -22,6 +22,7 @@ Tech:
 - [TanStack Query](https://tanstack.com/query/latest)
 - [TanStack Router](https://tanstack.com/router/latest)
 - [TanStack Start](https://tanstack.com/start/latest)
+- [Signals](https://preactjs.com/guide/v10/signals/)
 
 ## Setup
 
