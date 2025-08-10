@@ -13,6 +13,7 @@ import type { ReactNode } from 'react';
 import globalCss from '@/assets/css/global.css?url';
 import { DefaultCatchBoundary } from '@/components/layout/DefaultCatchBoundary';
 import { NotFound } from '@/components/layout/NotFound';
+import { theme } from '@/signals/theme';
 import { seo } from '@/utils/seo';
 
 export const Route = createRootRouteWithContext<{
@@ -77,7 +78,7 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
 	return (
-		<html lang='en' data-theme='dark'>
+		<html lang='en' data-theme={theme.value}>
 			<head>
 				<HeadContent />
 			</head>
