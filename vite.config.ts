@@ -16,7 +16,11 @@ export default defineConfig({
 		}),
 		tsConfigPaths(),
 		tanstackStart({ customViteReactPlugin: true }),
-		viteReact(),
+		viteReact({
+            babel: {
+                plugins: [['module:@preact/signals-react-transform']],
+            },
+        }),
 		tailwindcss(),
 	],
 });
