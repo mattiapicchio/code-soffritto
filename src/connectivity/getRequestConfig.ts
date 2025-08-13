@@ -9,7 +9,7 @@
  * @property locale - Accept-Language header value.
  */
 
-const DEFAULT_TIMEOUT = 5000;
+const DEFAULT_TIMEOUT = 10000;
 export interface GetRequestConfigOptions {
 	method?: string;
 	headers?: Record<string, string>;
