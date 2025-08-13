@@ -6,6 +6,7 @@
 - [Setup](#setup)
 - [Development server](#development-server)
 - [Production server](#production-server)
+- [API Fetch Strategy](#api-fetch-strategy)
 - [Linting-Formatting](#linting-formatting)
 
 ## Project Description
@@ -53,6 +54,20 @@ Locally preview production build:
 ```sh
 npm run preview
 ```
+
+## API Fetch Strategy ⚡️🚀
+
+The API fetch layer is designed for robustness, type safety, and developer experience:
+
+- **Type-safe fetch wrapper**: All API calls are strongly typed for request and response.
+- **Custom error handling & mapping**: Differentiates between HTTP errors, network errors, aborts, and custom error codes/messages. Automatically maps error codes and HTTP status to friendly, optionally localized messages (i18n-ready).
+- **Timeout support**: Requests are automatically aborted after a configurable timeout.
+- **Authorization & localization**: Supports configurable access tokens and language/locale headers.
+- **Flexible request config**: Easily merge headers, stringify bodies, and handle FormData.
+- **JSDoc documentation**: All fetch utilities are fully documented for IDE autocompletion.
+- **Testing exceptions support**: Simulate network errors for testing purposes.
+- **Seamless integration**: Can be used standalone, with React's `use()` for Suspense-based data fetching, or with TanStack Query.
+- **Facade Pattern**: The API layer exposes a simple, unified interface for all network operations, hiding internal complexity and implementation details and avoiding entanglement.
 
 ## Linting-Formatting
 
