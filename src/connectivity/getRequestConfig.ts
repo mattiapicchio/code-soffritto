@@ -8,11 +8,13 @@
  * @property contentType - Content-Type header value.
  * @property locale - Accept-Language header value.
  */
+
+const DEFAULT_TIMEOUT = 5000;
 export interface GetRequestConfigOptions {
 	method?: string;
 	headers?: Record<string, string>;
 	body?: Record<string, unknown> | string | FormData | null | undefined;
-	signal?: AbortSignal;
+	timeout?: number;
 	accessToken?: string;
 	contentType?: string;
 	locale?: string;
@@ -31,7 +33,7 @@ export interface GetRequestConfigOptions {
 export function getRequestConfig(
 	options: GetRequestConfigOptions = {},
 ): RequestInit {
-	const { body, ...rest } = options;
+	const { body, timeout = DEFAULT_TIMEOUT, ...rest } = options;
 	const headers: Record<string, string> = { ...options.headers };
 
 	if (options.accessToken) {
@@ -51,7 +53,7 @@ export function getRequestConfig(
 		!(body instanceof FormData);
 
 	return Object.assign(
-		{ ...rest, headers },
+		{ ...rest, headers, signal: AbortSignal.timeout(timeout) },
 		body !== undefined
 			? {
 					body: isJsonBody ? JSON.stringify(body) : body,
