@@ -39,6 +39,7 @@
 		"strings": "on"
 	},
 	"editor.colorDecorators": true,
+	"editor.formatOnSave": true,
 	"tailwindCSS.showPixelEquivalents": true,
 	"tailwindCSS.suggestions": true,
 	"cSpell.words": [
