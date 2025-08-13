@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useEffect } from 'react';
-import { fetchPokemon } from '@/connectivity/api.pokemon/api.pokemon';
+import { useQueryPokemon } from '@/connectivity/api.pokemon/queries.pokemon';
 import { toggleTheme } from '@/signals/theme';
 import { ROUTE_KEY } from '@/utils/routerUtils';
 
@@ -9,17 +8,13 @@ export const Route = createFileRoute(ROUTE_KEY.HOME)({
 });
 
 function Home() {
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const result = await fetchPokemon({ name: 'pikachu' });
-				console.log('Fetched Pokémon:', result);
-			} catch (err) {
-				console.error(err);
-			}
-		};
-		fetchData();
-	}, []);
+	const {
+		data: pokemon,
+		error,
+		isLoading,
+	} = useQueryPokemon({
+		name: 'ditto',
+	});
 
 	return (
 		<div>
@@ -27,6 +22,11 @@ function Home() {
 			<button type='button' onClick={toggleTheme} className='cursor-pointer'>
 				Toggle Theme
 			</button>
+			<div>
+				{isLoading && <p>Fetching...</p>}
+				{error && <p className='text-orange'>Error: {error.message}</p>}
+				{pokemon && <span>{pokemon.name}</span>}
+			</div>
 		</div>
 	);
 }
