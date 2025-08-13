@@ -36,7 +36,6 @@ export async function fetchRequest<TResponse>(
 
 	try {
 		const response = await fetch(url, config);
-		console.log('response', response);
 
 		const responseType = response.headers.get('content-type');
 		const data = responseType?.includes('application/json')
