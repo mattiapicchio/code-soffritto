@@ -55,7 +55,7 @@ Locally preview production build:
 npm run preview
 ```
 
-## API Fetch Strategy ⚡️🚀
+## API Fetch Strategy
 
 The API fetch layer is designed for robustness, type safety, and developer experience:
 
