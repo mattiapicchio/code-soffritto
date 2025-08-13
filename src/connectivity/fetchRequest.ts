@@ -1,24 +1,22 @@
-import { FetchError } from './FetchError';
-import { getErrorMessage } from './getErrorMessage';
+import { FetchError } from './fetchError';
+import { type ErrorCode, getErrorMessage } from './getErrorMessage';
 
-const API_URL = process.env.PUBLIC_API_URL;
+const API_URL = import.meta.env.VITE_PUBLIC_API_URL;
 
 /**
- * Makes an HTTP request using the native fetch API and returns the parsed response.
- * Throws a FetchError if the response is not ok.
- *
  * @template TResponse - The expected response type.
  * @param path - The API endpoint path (relative to API_URL).
  * @param config - The RequestInit configuration object.
+ * @param [exception] - (Testing only) If provided, simulates an error by immediately throwing a FetchError with the given ErrorCode.
+ *   This is useful for testing error handling in consuming components without making a real network request.
  * @returns A promise resolving to the parsed response of type TResponse.
- * @throws {FetchError} - If the response is not ok or a network error occurs.
+ * @throws {FetchError} - If the response is not ok, a network error occurs, or if 'exception' is provided for testing.
  *
- * @example
- * const data = await fetchRequest<MyType>('/users', { method: 'GET' });
  */
 export async function fetchRequest<TResponse>(
 	path: string,
 	config: RequestInit,
+	exception?: ErrorCode,
 ): Promise<TResponse> {
 	const url = `${API_URL}${path}`;
 	const response = await fetch(url, config);
@@ -34,6 +32,13 @@ export async function fetchRequest<TResponse>(
 			errorCode: data.errorCode,
 			status: response.status,
 			response: data,
+		});
+	}
+
+	if (exception !== undefined) {
+		throw new FetchError({
+			message: getErrorMessage(exception),
+			errorCode: String(exception),
 		});
 	}
 
